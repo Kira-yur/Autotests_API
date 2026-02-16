@@ -15,12 +15,12 @@ create_response_data = create_user_response.json()
 print("Статус создания пользователя", create_user_response.status_code)
 print("JSON создания пользователя", create_response_data)
 
-auth_payload = {
+login_payload = {
     "email": create_user_payload["email"],
     "password": create_user_payload["password"]
 }
 
-login_response = httpx.post('http://localhost:8000/api/v1/authentication/login', json=auth_payload)
+login_response = httpx.post('http://localhost:8000/api/v1/authentication/login', json=login_payload)
 login_response_data = login_response.json()
 
 print("Статус логина", login_response.status_code)
